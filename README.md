@@ -4,7 +4,7 @@ A professional healthcare dashboard for patient management and appointment sched
 # VitalSync | Enterprise Healthcare Patient Dashboard
 
 ## 1. Project Overview
-VitalSync is a specialized hospital management interface designed for the "ProDesk Capstone." The goal is to provide a seamless experience for patients to track their medical journey and for doctors to manage their daily schedules.
+VitalSync is a specialized hospital management interface. The goal is to provide a seamless experience for patients to track their medical journey and for doctors to manage their daily schedules.
 
 ## 2. Track & Tech Stack
 - **Track:** Frontend Intern
@@ -27,11 +27,20 @@ VitalSync is a specialized hospital management interface designed for the "ProDe
 
 ## 4. Proposed State Structure (Zustand)
 We will manage the following global slices:
-- `authStore`: Handles user login state and roles.
-- `appointmentDataStore`: Manages the list of booked and pending visits.
-- `patientRecordStore`: Stores the medical records currently being viewed.
+- `authDetails`: Handles user login state and roles.
+- `appointmentDetails`: Manages the list of booked and pending visits.
+- `patientDetails`: Stores the medical records currently being viewed.
 
 ## 5. UI/UX Plan
 - **Primary Color:** Medical Blue (#0052FF)
 - **Secondary Color:** Slate Gray (#64748B) for text clarity.
-- **Typography:** Inter or Geist Sans for a modern, tech-forward feel.
+- **Typography:** Inter or Geist Sans for a modern look.
+
+- ## UI Design (Figma)
+The interface was designed with a focus on visual hierarchy and accessibility.
+- **View Figma File:** [VitalSync Design System & Wireframes](https://www.figma.com/design/gWobHDbldSlXtbHVMulHEQ/Untitled?node-id=0-1&t=b2m6isIpwI51pLqM-1)
+
+- ## State Tree & API Flow
+The application utilizes a centralized Zustand store to manage global data flow, ensuring a "Single Source of Truth."
+[(https://github.com/riyamangal2732005/prodesk-capstone-vitalsync/blob/main/architectureVitalSync.png)]
+
