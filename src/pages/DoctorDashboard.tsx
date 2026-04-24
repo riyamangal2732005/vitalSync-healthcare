@@ -139,12 +139,12 @@ const DoctorDashboard = () => {
                     </div>
                 </div>
             ) : (
-            <div style={{ width: '100%', height: '400px' }}>
+            <div style={{ width: '100%', height: '300px' }}>
                 {isMounted && (
-                    <ResponsiveContainer width="100%" height="100%" aspect={2}>
+                    <ResponsiveContainer width="100%" height="100%">
                         <BarChart
                             data={chartData}
-                            margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
+                            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
                             <XAxis 
                             dataKey="name" 
