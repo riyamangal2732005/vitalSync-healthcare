@@ -225,8 +225,8 @@ const DoctorDashboard = () => {
                     <thead className="bg-gray-100">
                         <tr>
                             <th className="p-4">Name</th>
-                            <th className="p-4">Diagnosis</th>
                             <th className="p-4">Patient UID</th>
+                            <th className="p-4">Diagnosis</th>
                             <th className="p-4">Date Added</th>
                             <th className="p-4">Actions</th>
                         </tr>
