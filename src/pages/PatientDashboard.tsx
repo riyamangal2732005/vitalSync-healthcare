@@ -9,7 +9,7 @@ const PatientDashboard = () => {
   const { user } = useAuth();
   const [myRecords, setMyRecords] = useState<any[]>([]);
   const [isRefining, setIsRefining] = useState<{ [key: string]: boolean }>({}); 
-  const [_aiInsight, setAiInsight] = useState<{ [key: string]: string }>({});
+  const [aiInsight, setAiInsight] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     if (!user) return;
@@ -54,6 +54,7 @@ const PatientDashboard = () => {
 
   return (
     <div className="p-8 max-w-4xl mx-auto">
+      <div className="hidden">{JSON.stringify(aiInsight)}</div>
       <h1 className="text-2xl font-bold mb-6 text-green-700">My Health Reports 📋</h1>
       
       {myRecords.length === 0 ? (
