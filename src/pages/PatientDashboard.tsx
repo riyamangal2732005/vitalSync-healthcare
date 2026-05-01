@@ -9,7 +9,7 @@ const PatientDashboard = () => {
   const { user } = useAuth();
   const [myRecords, setMyRecords] = useState<any[]>([]);
   const [isRefining, setIsRefining] = useState<{ [key: string]: boolean }>({}); 
-  const [aiInsight, setAiInsight] = useState<{ [key: string]: string }>({});
+  const [_aiInsight, setAiInsight] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     if (!user) return;
