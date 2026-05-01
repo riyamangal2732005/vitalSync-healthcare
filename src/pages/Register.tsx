@@ -4,6 +4,8 @@ import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
+import { toast } from 'sonner';
+
 
 
 export default function Register() {
@@ -29,12 +31,12 @@ export default function Register() {
                 uid: userCredential.user.uid
             });
             console.log("User registered: ", userCredential.user);
-            alert("Account created successfully! Redirecting to Dashboard...");
+            toast.success("Account created successfully! Redirecting to Dashboard...");
             navigate('/dashboard');
         }
         catch (error: any){
             console.error("Error registering: ", error.message);
-            alert(error.message);
+            toast.error(error.message);
         }
         finally{
             setLoading(false);

@@ -4,6 +4,7 @@ import { auth, db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate, Link} from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
+import { toast } from 'sonner';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -24,12 +25,20 @@ export default function Login() {
       if (userDoc.exists()) {
         const userData = userDoc.data();
         console.log("Logged in user role:", userData.role);
+        toast.success(`Welcome back, ${userData.name || 'User'}!`);
         
         // 3. Redirect to dashboard
         navigate('/dashboard'); 
+      } else{
+        toast.error("User profile not found in database.");
       }
     } catch (error: any) {
-      alert("Login failed: " + error.message);
+      let message = "Login failed. Please try again.";
+      if (error.code === 'auth/user-not-found') message = "No account found with this email.";
+      if (error.code === 'auth/wrong-password') message = "Incorrect password.";
+      
+      toast.error(message);
+      console.error("Login Error:", error.code);
     }
     finally{
       setLoading(false);
